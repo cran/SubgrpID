@@ -125,7 +125,7 @@ Variable selection is automatically built-in to these algorithms. Final signatur
   \emph{Statistics in Medicine}, \bold{34}, 317-342.
 }
 \author{
-Xin Huang, Yan Sun, and Saptarshi Chatterjee
+Xin Huang, Yan Sun, Saptarshi Chatterjee and Paul Trow
 }
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

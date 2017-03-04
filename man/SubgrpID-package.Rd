@@ -17,12 +17,13 @@ License: \tab GPL-3\cr
 }
 }
 \author{
-Xin Huang, Yan Sun, and Saptarshi Chatterjee
+Xin Huang, Yan Sun, Saptarshi Chatterjee and Paul Trow
 Maintainer: Xin Huang <xhuang.stats@gmail.com>
 }
 \references{
   Huang X. et al. (2017)
   Patient subgroup identification for clinical drug development. \emph{Statistics in Medicine}, doi: 10.1002/sim.7236.
+  
   Chen G. et al. (2015)
   A PRIM approach to predictive-signature development for patient stratification
   \emph{Statistics in Medicine}, \bold{34}, 317-342.

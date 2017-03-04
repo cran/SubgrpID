@@ -1,4 +1,4 @@
-5456abd452d3443a7545fd343d97be20 *DESCRIPTION
+eeb21b68bab3ad71c60535e4ca9f2f9e *DESCRIPTION
 1c5af6dda11bf35089e6cd619650224c *NAMESPACE
 bd2a4a95073e28cca3b14dd6c050a5bf *R/aim_batting.R
 3053fa2b63a83cbd16510bf77c43443b *R/cross_validation_functions.R
@@ -8,10 +8,12 @@ bd2a4a95073e28cca3b14dd6c050a5bf *R/aim_batting.R
 72b2f8f79d6843903435ca64f9eab9fd *R/sequential_batting.R
 4b91e2646fcc7a30021722a35f419cf3 *data/Sepsis.test.rda
 7ea7bf3e067bf2ddc0828a061b7a8a3b *data/Sepsis.train.rda
+f3316ce332044740bd27d450901eb18f *inst/CITATION
+8d36acacb33b1c29354264d823a1a057 *inst/NEWS
 1b061ec139a668cfe985261840122e8f *man/Sepsis.test.Rd
 8ac7b4ea150272211400438a984b3dbd *man/Sepsis.train.Rd
-688d658cac1ec1ebfc63ad6b31869d66 *man/SubgrpID-package.Rd
-47c02e32b66e3b10ab371ba04de0d3b5 *man/SubgrpID.Rd
+85d76b0bcf1e4d71fa3748604d271ce0 *man/SubgrpID-package.Rd
+bfefd83e09ab8812d9c9ef0f687ef7f4 *man/SubgrpID.Rd
 1d8825c23a74bca82df5801c26374b40 *man/aim.batting.Rd
 9f863047be41b789e026c85973a12276 *man/aim.batting.wrapper.Rd
 7b1e50ec8ce28b0afc7540aa315a0d2c *man/aim.rule.batting.Rd
