@@ -2,7 +2,7 @@
 % Please edit documentation in R/sequential_batting.R
 \name{query.data}
 \alias{query.data}
-\title{internal function used in seqlr.batting}
+\title{query.data}
 \usage{
 query.data(data, rule)
 }
@@ -15,5 +15,8 @@ query.data(data, rule)
 a logical variable indicating whether rules are satisfied or not.
 }
 \description{
+internal function used in seqlr.batting
+}
+\details{
 internal function used in seqlr.batting
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{permute.rows}
 \alias{permute.rows}
-\title{Ramdomly permute the rows of a matrix.}
+\title{permute.rows}
 \usage{
 permute.rows(A)
 }
@@ -13,5 +13,8 @@ permute.rows(A)
 the matrix with permuted rows.
 }
 \description{
-Ramdomly permute the rows of a matrix.
+Randomly permute the rows of a matrix.
+}
+\details{
+Randomly permute the rows of a matrix.
 }

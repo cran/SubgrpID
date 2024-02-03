@@ -2,12 +2,25 @@
 % Please edit documentation in R/sequential_batting.R
 \name{cv.seqlr.batting}
 \alias{cv.seqlr.batting}
-\title{Cross Validation for Sequential BATTing}
+\title{cv.seqlr.batting}
 \usage{
-cv.seqlr.batting(y, x, censor.vec = NULL, trt.vec = NULL, trtref = NULL,
-  type = "c", n.boot = 50, des.res = "larger", class.wt = c(1, 1),
-  min.sigp.prcnt = 0.2, pre.filter = NULL, filter.method = NULL,
-  k.fold = 5, cv.iter = 50, max.iter = 500)
+cv.seqlr.batting(
+  y,
+  x,
+  censor.vec = NULL,
+  trt.vec = NULL,
+  trtref = NULL,
+  type = "c",
+  n.boot = 50,
+  des.res = "larger",
+  class.wt = c(1, 1),
+  min.sigp.prcnt = 0.2,
+  pre.filter = NULL,
+  filter.method = NULL,
+  k.fold = 5,
+  cv.iter = 50,
+  max.iter = 500
+)
 }
 \arguments{
 \item{y}{data frame containing the response}
@@ -42,6 +55,7 @@ cv.seqlr.batting(y, x, censor.vec = NULL, trt.vec = NULL, trtref = NULL,
 }
 \value{
 a list containing with following entries: 
+\describe{
 \item{stats.summary}{Summary of performance statistics.}
 \item{pred.classes}{Data frame containing the predictive clases (TRUE/FALSE) for each iteration.}
 \item{folds}{Data frame containing the fold indices (index of the fold for each row) for each iteration.}
@@ -49,6 +63,10 @@ a list containing with following entries:
 \item{error.log}{List of any error messages that are returned at an iteration.}
 \item{interplot}{Treatment*subgroup interaction plot for predictive case}
 }
+}
 \description{
+Cross Validation for Sequential BATTing
+}
+\details{
 Cross Validation for Sequential BATTing
 }

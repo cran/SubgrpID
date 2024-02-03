@@ -2,10 +2,18 @@
 % Please edit documentation in R/filter.R
 \name{filter.univariate}
 \alias{filter.univariate}
-\title{Univariate Filtering}
+\title{filter.univariate}
 \usage{
-filter.univariate(data, type, yvar, xvars, censorvar, trtvar, trtref = 1,
-  pre.filter = length(xvars))
+filter.univariate(
+  data,
+  type,
+  yvar,
+  xvars,
+  censorvar,
+  trtvar,
+  trtref = 1,
+  pre.filter = length(xvars)
+)
 }
 \arguments{
 \item{data}{input data frame}
@@ -28,5 +36,8 @@ filter.univariate(data, type, yvar, xvars, censorvar, trtvar, trtref = 1,
 covariate names after univariate filtering.
 }
 \description{
+Univariate Filtering
+}
+\details{
 Univariate Filtering
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{make.arg.list}
 \alias{make.arg.list}
-\title{Create a list of variables corresponding to the arguments of the function func.name and assigns values.}
+\title{make.arg.list}
 \usage{
 make.arg.list(func.name)
 }
@@ -13,5 +13,8 @@ make.arg.list(func.name)
 list of variables corresponding to the arguments of the function
 }
 \description{
+Create a list of variables corresponding to the arguments of the function func.name and assigns values.
+}
+\details{
 Create a list of variables corresponding to the arguments of the function func.name and assigns values.
 }

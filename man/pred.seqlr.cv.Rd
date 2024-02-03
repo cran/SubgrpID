@@ -2,7 +2,7 @@
 % Please edit documentation in R/sequential_batting.R
 \name{pred.seqlr.cv}
 \alias{pred.seqlr.cv}
-\title{Prediction function for CV Sequential BATTing}
+\title{pred.seqlr.cv}
 \usage{
 pred.seqlr.cv(data, predict.rule, args)
 }
@@ -18,4 +18,7 @@ a logical vector indicating the prediction for each row of data.
 }
 \description{
 Assign positive and negative groups for cross-validation data given prediction rule in predict.rule.
+}
+\details{
+Prediction function for CV Sequential BATTing
 }

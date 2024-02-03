@@ -2,7 +2,7 @@
 % Please edit documentation in R/sequential_batting.R
 \name{pred.seqlr}
 \alias{pred.seqlr}
-\title{Prediction function for Sequential BATTing}
+\title{pred.seqlr}
 \usage{
 pred.seqlr(x, predict.rule)
 }
@@ -16,4 +16,7 @@ a logical vector indicating the prediction for each row of data.
 }
 \description{
 Assign positive and negative groups based on predict.rule, the output of seqlr.batting.
+}
+\details{
+Prediction function for Sequential BATTing
 }

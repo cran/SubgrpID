@@ -2,19 +2,21 @@
 % Please edit documentation in R/filter.R
 \name{filter}
 \alias{filter}
-\title{Filter function for predictive/prognostic biomarker candidates for signature development}
+\title{filter}
 \usage{
-filter(data,
-type="c",
-yvar,
-xvars,
-censorvar=NULL,
-trtvar=NULL,
-trtref=1,
-n.boot=50,
-cv.iter=20,
-pre.filter=length(xvars),
-filter.method=NULL)
+filter(
+  data,
+  type = "c",
+  yvar,
+  xvars,
+  censorvar = NULL,
+  trtvar = NULL,
+  trtref = 1,
+  n.boot = 50,
+  cv.iter = 20,
+  pre.filter = length(xvars),
+  filter.method = NULL
+)
 }
 \arguments{
 \item{data}{input data frame}
@@ -46,43 +48,12 @@ filter.method=NULL)
 Filter function for Prognostic and preditive biomarker signature development for Exploratory Subgroup Identification in Randomized Clinical Trials
 }
 \details{
+Filter function for predictive/prognostic biomarker candidates for signature development
+
 The function contains two algorithms for filtering high-dimentional multivariate (prognostic/predictive) biomarker candidates via univariate fitering (used p-values of group difference for prognostic case, p-values of interaction term for predictive case); LASSO/Elastic Net method. (Tian L. et al 2012)
 }
 \examples{
-\dontrun{
-data(Sepsis.train)
-
-yvar="survival"
-xvars=names(Sepsis.train)[2:12]
-trtvar="THERAPY"
-trtref="active"
-set.seed(123)
-
-filter.res <- filter(data=Sepsis.train,
-type="b",
-yvar=yvar,
-xvars=xvars,
-trtvar=trtvar,
-trtref=trtref,
-pre.filter=20,
-filter.method="univariate")
-
-filter.res
-
-set.seed(123)
-filter.res <- filter(data=Sepsis.train,
-type="b",
-yvar=yvar,
-xvars=xvars,
-trtvar=trtvar,
-trtref=trtref,
-pre.filter="opt", 
-filter.method="glmnet")
-
-filter.res
-}
-
-
+# no run
 }
 \references{
 Tian L, Alizadeh A, Gentles A, Tibshirani R (2012) A Simple Method for Detecting Interactions between a Treatment and a Large Number of Covariates. J Am Stat Assoc. 2014 Oct; 109(508): 1517-1532.

@@ -2,10 +2,21 @@
 % Please edit documentation in R/sequential_batting.R
 \name{seqlr.score.pred}
 \alias{seqlr.score.pred}
-\title{Compute score of cutoff for predictive case}
+\title{seqlr.score.pred}
 \usage{
-seqlr.score.pred(data, yvar, censorvar, xvar, trtvar, cutoff, type, class.wt,
-  dir, nsubj, min.sigp.prcnt)
+seqlr.score.pred(
+  data,
+  yvar,
+  censorvar,
+  xvar,
+  trtvar,
+  cutoff,
+  type,
+  class.wt,
+  dir,
+  nsubj,
+  min.sigp.prcnt
+)
 }
 \arguments{
 \item{data}{input data frame.}
@@ -34,5 +45,8 @@ seqlr.score.pred(data, yvar, censorvar, xvar, trtvar, cutoff, type, class.wt,
 score (p-value of treatment*subgroup interaction) for the given cutoff.
 }
 \description{
+Compute score of cutoff for predictive case
+}
+\details{
 Compute score of cutoff for predictive case
 }

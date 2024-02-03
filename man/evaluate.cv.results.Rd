@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{evaluate.cv.results}
 \alias{evaluate.cv.results}
-\title{Cross-validation Performance Evaluation}
+\title{evaluate.cv.results}
 \usage{
 evaluate.cv.results(cv.data, y, censor.vec, trt.vec, type)
 }
@@ -22,4 +22,7 @@ a list containing raw statistics and fold information
 }
 \description{
 Take the raw output of kfold.cv and calculate performance statistics for each iteration of the cross-validation.
+}
+\details{
+Cross-validation Performance Evaluation
 }

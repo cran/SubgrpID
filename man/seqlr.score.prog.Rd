@@ -2,10 +2,20 @@
 % Please edit documentation in R/sequential_batting.R
 \name{seqlr.score.prog}
 \alias{seqlr.score.prog}
-\title{Compute score of cutoff for prognostic case}
+\title{seqlr.score.prog}
 \usage{
-seqlr.score.prog(data, yvar, censorvar, xvar, cutoff, type, class.wt, dir,
-  nsubj, min.sigp.prcnt)
+seqlr.score.prog(
+  data,
+  yvar,
+  censorvar,
+  xvar,
+  cutoff,
+  type,
+  class.wt,
+  dir,
+  nsubj,
+  min.sigp.prcnt
+)
 }
 \arguments{
 \item{data}{input data frame.}
@@ -32,5 +42,8 @@ seqlr.score.prog(data, yvar, censorvar, xvar, cutoff, type, class.wt, dir,
 score (p-value of main effect) for the given cutoff.
 }
 \description{
+Compute score of cutoff for prognostic case
+}
+\details{
 Compute score of cutoff for prognostic case
 }

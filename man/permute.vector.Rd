@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{permute.vector}
 \alias{permute.vector}
-\title{Randomly permute the entries of a vector.}
+\title{permute.vector}
 \usage{
 permute.vector(x)
 }
@@ -13,5 +13,8 @@ permute.vector(x)
 the permuted vector
 }
 \description{
+Randomly permute the entries of a vector.
+}
+\details{
 Randomly permute the entries of a vector.
 }

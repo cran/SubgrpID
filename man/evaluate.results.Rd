@@ -2,10 +2,16 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{evaluate.results}
 \alias{evaluate.results}
-\title{Get statistics for a single set of predictions.}
+\title{evaluate.results}
 \usage{
-evaluate.results(y, predict.data, censor.vec = NULL, trt.vec = NULL,
-  trtref = NULL, type)
+evaluate.results(
+  y,
+  predict.data,
+  censor.vec = NULL,
+  trt.vec = NULL,
+  trtref = NULL,
+  type
+)
 }
 \arguments{
 \item{y}{data frame of the response variable.}
@@ -24,5 +30,8 @@ evaluate.results(y, predict.data, censor.vec = NULL, trt.vec = NULL,
 a list containing p-value and group statistics.
 }
 \description{
+Get statistics for a single set of predictions.
+}
+\details{
 Get statistics for a single set of predictions.
 }

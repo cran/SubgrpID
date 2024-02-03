@@ -2,10 +2,21 @@
 % Please edit documentation in R/sequential_batting.R
 \name{batting.pred}
 \alias{batting.pred}
-\title{Main predictive BATTing function}
+\title{batting.pred}
 \usage{
-batting.pred(dataset, ids, yvar, censorvar, trtvar, type, class.wt, xvar,
-  n.boot, des.res, min.sigp.prcnt)
+batting.pred(
+  dataset,
+  ids,
+  yvar,
+  censorvar,
+  trtvar,
+  type,
+  class.wt,
+  xvar,
+  n.boot,
+  des.res,
+  min.sigp.prcnt
+)
 }
 \arguments{
 \item{dataset}{input dataset in data frame}
@@ -34,5 +45,8 @@ batting.pred(dataset, ids, yvar, censorvar, trtvar, type, class.wt, xvar,
 a signature rule consisting of variable name, direction, optimal cutpoint and the corresponding p-value.
 }
 \description{
+Main predictive BATTing function
+}
+\details{
 Main predictive BATTing function
 }

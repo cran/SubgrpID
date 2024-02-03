@@ -2,10 +2,20 @@
 % Please edit documentation in R/sequential_batting.R
 \name{seqlr.find.cutoff.pred}
 \alias{seqlr.find.cutoff.pred}
-\title{Find cutoff for predictive case.}
+\title{seqlr.find.cutoff.pred}
 \usage{
-seqlr.find.cutoff.pred(data, yvar, censorvar, xvar, trtvar, type, class.wt, dir,
-  nsubj, min.sigp.prcnt)
+seqlr.find.cutoff.pred(
+  data,
+  yvar,
+  censorvar,
+  xvar,
+  trtvar,
+  type,
+  class.wt,
+  dir,
+  nsubj,
+  min.sigp.prcnt
+)
 }
 \arguments{
 \item{data}{input data frame.}
@@ -32,5 +42,8 @@ seqlr.find.cutoff.pred(data, yvar, censorvar, xvar, trtvar, type, class.wt, dir,
 the optimal score (p-value of subgroup*treatment interaction) for a predictor variable.
 }
 \description{
+Find cutoff for predictive case.
+}
+\details{
 Find cutoff for predictive case.
 }

@@ -2,10 +2,19 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{kfold.cv}
 \alias{kfold.cv}
-\title{Perform k-fold cross-validation of a model.}
+\title{kfold.cv}
 \usage{
-kfold.cv(data, model.Rfunc, model.Rfunc.args, predict.Rfunc, predict.Rfunc.args,
-  k.fold = 5, cv.iter = 50, strata, max.iter = 500)
+kfold.cv(
+  data,
+  model.Rfunc,
+  model.Rfunc.args,
+  predict.Rfunc,
+  predict.Rfunc.args,
+  k.fold = 5,
+  cv.iter = 50,
+  strata,
+  max.iter = 500
+)
 }
 \arguments{
 \item{data}{the CV data}
@@ -34,5 +43,8 @@ cv.data - List of length cv.iter. Entry i contains the output of predict.Rfunc a
 sig.list - list of length cv.iter * k.fold, whose entries are the prediction.rules (signatures) returned by model.Rfunc at each k.fold iteration.
 }
 \description{
+Perform k-fold cross-validation of a model.
+}
+\details{
 Perform k-fold cross-validation of a model.
 }

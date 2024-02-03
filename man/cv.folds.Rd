@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{cv.folds}
 \alias{cv.folds}
-\title{Cross-validation folds.}
+\title{cv.folds}
 \usage{
 cv.folds(n, folds = 10)
 }
@@ -15,5 +15,8 @@ cv.folds(n, folds = 10)
 a list containing the observation numbers for each fold.
 }
 \description{
+Cross-validation folds.
+}
+\details{
 Cross-validation folds.
 }

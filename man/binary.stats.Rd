@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{binary.stats}
 \alias{binary.stats}
-\title{A function for binary statistics}
+\title{binary.stats}
 \usage{
 binary.stats(pred.class, y.vec)
 }
@@ -15,5 +15,8 @@ binary.stats(pred.class, y.vec)
 a data frame with sensitivity, specificity, NPV, PPV and accuracy
 }
 \description{
+A function for binary statistics
+}
+\details{
 A function for binary statistics
 }

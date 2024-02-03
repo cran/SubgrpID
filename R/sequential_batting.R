@@ -14,7 +14,8 @@
 #
 
 #' Compute score of cutoff for predictive case
-#'
+#' @title seqlr.score.pred
+#' @description Compute score of cutoff for predictive case
 #' @param data input data frame.
 #' @param yvar response variable name.
 #' @param censorvar censoring variable name.
@@ -66,13 +67,13 @@ seqlr.score.pred <- function(data, yvar, censorvar, xvar, trtvar, cutoff, type, 
     # }
     
     if (sigp.prcnt>min.sigp.prcnt & length(n.grp)>=2) {
-        if (class(model.fit)!="try-error") {
+        if (class(model.fit)[1]!="try-error") {
             if (type=="c" | type=="b") {
                 score <- try(summary(model.fit)$coefficient[4, 4],silent=TRUE)
-                if(class(score)=="try-error") score=NA
+                if(class(score)[1]=="try-error") score=NA
             } else {
                 score <- try(summary(model.fit)$coefficient[3,5],silent=TRUE)
-                if (class(score)=="try-error") score=NA
+                if (class(score)[1]=="try-error") score=NA
             }
         } else {
             score <- NA
@@ -85,7 +86,8 @@ seqlr.score.pred <- function(data, yvar, censorvar, xvar, trtvar, cutoff, type, 
 }
 
 #' Find cutoff for predictive case.
-#'
+#' @title seqlr.find.cutoff.pred
+#' @description Find cutoff for predictive case.
 #' @param data input data frame.
 #' @param yvar response variable name.
 #' @param censorvar censoring variable name.
@@ -96,7 +98,6 @@ seqlr.score.pred <- function(data, yvar, censorvar, xvar, trtvar, cutoff, type, 
 #' @param dir direction of cut.
 #' @param nsubj number of subjects.
 #' @param min.sigp.prcnt desired proportion of signature positive group size for a given cutoff. 
-#'
 #' @return the optimal score (p-value of subgroup*treatment interaction) for a predictor variable.
 #' 
 seqlr.find.cutoff.pred <- function(data, yvar, censorvar, xvar, trtvar, type, class.wt, dir, nsubj, min.sigp.prcnt) {
@@ -110,7 +111,8 @@ seqlr.find.cutoff.pred <- function(data, yvar, censorvar, xvar, trtvar, type, cl
 }
 
 #' Main predictive BATTing function
-#'
+#' @title batting.pred
+#' @description Main predictive BATTing function
 #' @param dataset input dataset in data frame
 #' @param ids training indices
 #' @param yvar response variable name
@@ -159,7 +161,7 @@ batting.pred <- function(dataset, ids, yvar, censorvar, trtvar, type, class.wt, 
     #   coef.inter <- try(summary(model.temp)$coefficient[4,1],silent=TRUE)
     # }
     
-    if (class(coef.inter)=="try-error") {
+    if (class(coef.inter)[1]=="try-error") {
       dir <- NA
       model.pval <- NA
       cutoff.med <- NA
@@ -231,7 +233,7 @@ batting.pred <- function(dataset, ids, yvar, censorvar, trtvar, type, class.wt, 
             #   data$id=NULL
             # }
             
-            if (class(model.temp1)!="try-error") {
+            if (class(model.temp1)[1]!="try-error") {
                 
                 if (type=="c" | type=="b") {
                     model.pval <- summary(model.temp1)$coefficient[4,4]
@@ -260,7 +262,8 @@ batting.pred <- function(dataset, ids, yvar, censorvar, trtvar, type, class.wt, 
 ###########################################################################
 
 #' Compute score of cutoff for prognostic case
-#'
+#' @title seqlr.score.prog
+#' @description Compute score of cutoff for prognostic case
 #' @param data input data frame.
 #' @param yvar response variable name.
 #' @param censorvar censoring variable name.
@@ -316,14 +319,14 @@ seqlr.score.prog <- function(data, yvar, censorvar, xvar, cutoff, type, class.wt
     # }
     
     if (sigp.prcnt>min.sigp.prcnt & length(n.id)>=2) {
-        if (class(model.fit)!="try-error") {
+        if (class(model.fit)[1]!="try-error") {
             if (type=="c"|type=="b") {
                 score <- try(summary(model.fit)$coefficient[2,4],silent=TRUE)
-                if(class(score)=="try-error") score=NA
+                if(class(score)[1]=="try-error") score=NA
                 
             }else {
                 score <- try(summary(model.fit)$coefficient[5],silent=TRUE)
-                if(class(score)=="try-error") score=NA
+                if(class(score)[1]=="try-error") score=NA
             }
         } else {
             score <- NA
@@ -337,7 +340,8 @@ seqlr.score.prog <- function(data, yvar, censorvar, xvar, cutoff, type, class.wt
 
 
 #' Find cutoff for prognostic case.
-#'
+#' @title seqlr.find.cutoff.prog
+#' @description Find cutoff for prognostic case.
 #' @param data input data frame.
 #' @param yvar response variable name.
 #' @param censorvar censoring variable name.
@@ -362,7 +366,8 @@ seqlr.find.cutoff.prog <- function(data, yvar, censorvar, xvar, type, class.wt, 
 
 
 #' Main prognostic BATTing function
-#'
+#' @title batting.prog
+#' @description Main prognostic BATTing function
 #' @param dataset input dataset in data frame
 #' @param ids training indices
 #' @param yvar response variable name
@@ -413,7 +418,7 @@ batting.prog <- function(dataset, ids, yvar, censorvar, type, class.wt, xvar, n.
     # }
     
     
-    if (class(coef.main)=="try-error") {
+    if (class(coef.main)[1]=="try-error") {
       dir <- NA
       model.score <- NA
       cutoff.med <- NA
@@ -482,7 +487,7 @@ batting.prog <- function(dataset, ids, yvar, censorvar, type, class.wt, xvar, n.
             model.temp1 <- try(lm(model.formula1, data=data), silent=TRUE)
         }
         
-        if (class(model.temp1)!="try-error") {
+        if (class(model.temp1)[1]!="try-error") {
             
             if (type=="c"|type=="b") {
                 model.score <- summary(model.temp1)$coefficient[2, 4]
@@ -504,7 +509,8 @@ batting.prog <- function(dataset, ids, yvar, censorvar, type, class.wt, xvar, n.
 ###############################################################################
 
 #'  internal function used in seqlr.batting
-#'
+#' @title query.data
+#' @description internal function used in seqlr.batting
 #' @param data the given dataset
 #' @param rule rule is a vector of the form [x-variable, direction, cutoff, p-value]
 #'
@@ -546,7 +552,8 @@ query.data <- function(data, rule) {
 
 
 #' Perform sequential BATTing method.
-#'
+#' @title seqlr.batting
+#' @description Perform sequential BATTing method.
 #' @param y data frame containing the response.
 #' @param x data frame containing the predictors.
 #' @param censor.vec vector containing the censor status (only for TTE data , censor=0,event=1)  - default = NULL.
@@ -668,7 +675,7 @@ seqlr.batting <- function(y, x, censor.vec=NULL, trt.vec=NULL, trtref=NULL, type
             #   dataset$data.id.temp=NULL
             # }
             
-            if (class(model.temp1)!="try-error") {
+            if (class(model.temp1)[1]!="try-error") {
                 if (type=="c" | type=="b") {
                     min.ll <- logLik(model.temp1)[1]
                 } else {
@@ -715,7 +722,7 @@ seqlr.batting <- function(y, x, censor.vec=NULL, trt.vec=NULL, trtref=NULL, type
             #   dataset$data.id.temp=NULL
             # }
             
-            if (class(model.temp1)!="try-error") {
+            if (class(model.temp1)[1]!="try-error") {
                 if (type=="c" | type=="b") {
                     min.ll <- logLik(model.temp1)[1]
                 } else {
@@ -768,7 +775,8 @@ seqlr.batting <- function(y, x, censor.vec=NULL, trt.vec=NULL, trtref=NULL, type
 
 
 #' Cross Validation for Sequential BATTing
-#'
+#' @title cv.seqlr.batting
+#' @description Cross Validation for Sequential BATTing
 #' @param y data frame containing the response
 #' @param x data frame containing the predictors
 #' @param censor.vec vector giving the censor status (only for TTE data , censor=0,event=1) : default = NULL
@@ -786,13 +794,15 @@ seqlr.batting <- function(y, x, censor.vec=NULL, trt.vec=NULL, trtref=NULL, type
 #' @param max.iter total number of iterations allowed (including unsuccessful ones).
 #'
 #' @return a list containing with following entries: 
+#' \describe{
 #' \item{stats.summary}{Summary of performance statistics.}
 #' \item{pred.classes}{Data frame containing the predictive clases (TRUE/FALSE) for each iteration.}
 #' \item{folds}{Data frame containing the fold indices (index of the fold for each row) for each iteration.}
 #' \item{sig.list}{List of length cv.iter * k.fold containing the signature generated at each of the  k folds, for all iterations.}
 #' \item{error.log}{List of any error messages that are returned at an iteration.}
 #' \item{interplot}{Treatment*subgroup interaction plot for predictive case}
-#' 
+#' }
+
 cv.seqlr.batting <- function(y, x, censor.vec=NULL, trt.vec=NULL, trtref=NULL, type="c", n.boot=50, 
                              des.res="larger", class.wt=c(1, 1), min.sigp.prcnt=0.2, 
                              pre.filter=NULL, filter.method=NULL, k.fold=5, cv.iter=50, max.iter=500) {
@@ -874,7 +884,8 @@ cv.seqlr.batting <- function(y, x, censor.vec=NULL, trt.vec=NULL, trtref=NULL, t
 
 
 #' Wrapper function for seqlr.batting, to be passed to kfold.cv.
-#'
+#' @title seqlr.batting.wrapper
+#' @description Wrapper function for seqlr.batting, to be passed to kfold.cv.
 #' @param data data frame equal to cbind(y, x, trt, censor), where y and x are inputs to seqlr.batting.
 #' @param args list containing all other input arguments to seq.batting except for x and y. Also contains xvars=names(x) and yvar=names(y).
 #'
@@ -915,7 +926,7 @@ seqlr.batting.wrapper <- function(data, args) {
 }
 
 #' Prediction function for CV Sequential BATTing
-#' 
+#' @title pred.seqlr.cv
 #' @description Assign positive and negative groups for cross-validation data given prediction rule in predict.rule.
 #'
 #' @param data input data frame
@@ -965,7 +976,7 @@ pred.seqlr.cv <- function(data, predict.rule, args) {
 }
 
 #' Prediction function for Sequential BATTing
-#' 
+#' @title pred.seqlr
 #' @description Assign positive and negative groups based on predict.rule, the output of seqlr.batting.
 #'
 #' @param x input predictors matrix
@@ -997,7 +1008,7 @@ pred.seqlr <- function(x, predict.rule) {
 ###################################################################################################
 
 #' Get signature variables from output of seqlr.batting.
-#'
+#' @title get.var.counts.seq
 #' @param sig.list signature list returned by seqlr.batting.
 #' @param xvars predictor variable names
 #'

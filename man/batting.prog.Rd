@@ -2,10 +2,20 @@
 % Please edit documentation in R/sequential_batting.R
 \name{batting.prog}
 \alias{batting.prog}
-\title{Main prognostic BATTing function}
+\title{batting.prog}
 \usage{
-batting.prog(dataset, ids, yvar, censorvar, type, class.wt, xvar, n.boot,
-  des.res, min.sigp.prcnt)
+batting.prog(
+  dataset,
+  ids,
+  yvar,
+  censorvar,
+  type,
+  class.wt,
+  xvar,
+  n.boot,
+  des.res,
+  min.sigp.prcnt
+)
 }
 \arguments{
 \item{dataset}{input dataset in data frame}
@@ -32,5 +42,8 @@ batting.prog(dataset, ids, yvar, censorvar, type, class.wt, xvar, n.boot,
 a signature rule consisting of variable name, direction, optimal cutpoint and the corresponding p-value.
 }
 \description{
+Main prognostic BATTing function
+}
+\details{
 Main prognostic BATTing function
 }

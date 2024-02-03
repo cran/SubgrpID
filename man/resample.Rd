@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{resample}
 \alias{resample}
-\title{Creates a permutation of given size.}
+\title{resample}
 \usage{
 resample(x, size, ...)
 }
@@ -17,5 +17,8 @@ resample(x, size, ...)
 A resample of x is returned.
 }
 \description{
+Creates a permutation of given size.
+}
+\details{
 Creates a permutation of given size.
 }

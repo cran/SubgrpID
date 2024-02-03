@@ -2,7 +2,7 @@
 % Please edit documentation in R/sequential_batting.R
 \name{get.var.counts.seq}
 \alias{get.var.counts.seq}
-\title{Get signature variables from output of seqlr.batting.}
+\title{get.var.counts.seq}
 \usage{
 get.var.counts.seq(sig.list, xvars)
 }

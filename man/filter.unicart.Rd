@@ -2,10 +2,18 @@
 % Please edit documentation in R/filter.R
 \name{filter.unicart}
 \alias{filter.unicart}
-\title{rpart filtering (only for prognostic case)}
+\title{filter.unicart}
 \usage{
-filter.unicart(data, type, yvar, xvars, censorvar, trtvar, trtref = 1,
-  pre.filter = length(xvars))
+filter.unicart(
+  data,
+  type,
+  yvar,
+  xvars,
+  censorvar,
+  trtvar,
+  trtref = 1,
+  pre.filter = length(xvars)
+)
 }
 \arguments{
 \item{data}{input data frame}
@@ -28,5 +36,8 @@ filter.unicart(data, type, yvar, xvars, censorvar, trtvar, trtref = 1,
 selected covariates after rpart filtering
 }
 \description{
+rpart filtering
+}
+\details{
 rpart filtering (only for prognostic case)
 }

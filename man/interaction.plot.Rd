@@ -2,10 +2,14 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{interaction.plot}
 \alias{interaction.plot}
-\title{A function for interaction plot}
+\title{interaction.plot}
 \usage{
-interaction.plot(data.eval, type, main = "Interaction Plot",
-  trt.lab = c("Trt.", "Ctrl."))
+interaction.plot(
+  data.eval,
+  type,
+  main = "Interaction Plot",
+  trt.lab = c("Trt.", "Ctrl.")
+)
 }
 \arguments{
 \item{data.eval}{output of evaluate.results or summarize.cv.stats}
@@ -20,5 +24,8 @@ interaction.plot(data.eval, type, main = "Interaction Plot",
 A ggplot object.
 }
 \description{
+A function for interaction plot
+}
+\details{
 A function for interaction plot
 }

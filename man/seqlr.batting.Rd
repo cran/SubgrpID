@@ -2,11 +2,22 @@
 % Please edit documentation in R/sequential_batting.R
 \name{seqlr.batting}
 \alias{seqlr.batting}
-\title{Perform sequential BATTing method.}
+\title{seqlr.batting}
 \usage{
-seqlr.batting(y, x, censor.vec = NULL, trt.vec = NULL, trtref = NULL,
-  type = "c", n.boot = 50, des.res = "larger", class.wt = c(1, 1),
-  min.sigp.prcnt = 0.2, pre.filter = NULL, filter.method = NULL)
+seqlr.batting(
+  y,
+  x,
+  censor.vec = NULL,
+  trt.vec = NULL,
+  trtref = NULL,
+  type = "c",
+  n.boot = 50,
+  des.res = "larger",
+  class.wt = c(1, 1),
+  min.sigp.prcnt = 0.2,
+  pre.filter = NULL,
+  filter.method = NULL
+)
 }
 \arguments{
 \item{y}{data frame containing the response.}
@@ -37,5 +48,8 @@ seqlr.batting(y, x, censor.vec = NULL, trt.vec = NULL, trtref = NULL,
 it returns a list of signature rules consisting of variable names, directions, thresholds and the loglikelihood at each step the  signatures are applied.
 }
 \description{
+Perform sequential BATTing method.
+}
+\details{
 Perform sequential BATTing method.
 }

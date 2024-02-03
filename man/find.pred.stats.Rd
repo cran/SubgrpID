@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{find.pred.stats}
 \alias{find.pred.stats}
-\title{Find predictive stats from response and prediction vector}
+\title{find.pred.stats}
 \usage{
 find.pred.stats(data, yvar, trtvar, type, censorvar)
 }
@@ -21,5 +21,8 @@ find.pred.stats(data, yvar, trtvar, type, censorvar)
 a data frame of predictive statistics
 }
 \description{
+Find predictive stats from response and prediction vector
+}
+\details{
 Find predictive stats from response and prediction vector
 }

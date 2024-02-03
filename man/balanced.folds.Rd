@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{balanced.folds}
 \alias{balanced.folds}
-\title{Create balanced folds for cross-validation.}
+\title{balanced.folds}
 \usage{
 balanced.folds(y, nfolds = min(min(table(y)), 10))
 }
@@ -15,5 +15,8 @@ balanced.folds(y, nfolds = min(min(table(y)), 10))
 This function returns balanced folds
 }
 \description{
+Create balanced folds for cross-validation.
+}
+\details{
 Create balanced folds for cross-validation.
 }

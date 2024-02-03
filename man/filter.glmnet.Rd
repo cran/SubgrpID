@@ -2,10 +2,20 @@
 % Please edit documentation in R/filter.R
 \name{filter.glmnet}
 \alias{filter.glmnet}
-\title{Flitering using MC glmnet}
+\title{filter.glmnet}
 \usage{
-filter.glmnet(data, type, yvar, xvars, censorvar, trtvar, trtref, n.boot = 50,
-  cv.iter = 20, pre.filter = length(xvars))
+filter.glmnet(
+  data,
+  type,
+  yvar,
+  xvars,
+  censorvar,
+  trtvar,
+  trtref,
+  n.boot = 50,
+  cv.iter = 20,
+  pre.filter = length(xvars)
+)
 }
 \arguments{
 \item{data}{input data frame}
@@ -32,5 +42,8 @@ filter.glmnet(data, type, yvar, xvars, censorvar, trtvar, trtref, n.boot = 50,
 variables selected after glmnet filtering
 }
 \description{
+Flitering using MC glmnet
+}
+\details{
 Flitering using MC glmnet
 }

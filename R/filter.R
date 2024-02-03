@@ -1,18 +1,6 @@
 #' Filter function for predictive/prognostic biomarker candidates for signature development
+#' @title filter
 #' @description Filter function for Prognostic and preditive biomarker signature development for Exploratory Subgroup Identification in Randomized Clinical Trials 
-#' 
-#' @usage filter(data,
-#' type="c",
-#' yvar,
-#' xvars,
-#' censorvar=NULL,
-#' trtvar=NULL,
-#' trtref=1,
-#' n.boot=50,
-#' cv.iter=20,
-#' pre.filter=length(xvars),
-#' filter.method=NULL)
-#' 
 #' @param data input data frame 
 #' @param type type of response variable: "c" continuous; "s" survival; "b" binary
 #' @param yvar variable (column) name for response variable 
@@ -23,52 +11,15 @@
 #' @param n.boot number of bootstrap for the BATTing procedure
 #' @param cv.iter Algotithm terminates after cv.iter successful iterations of cross-validation, or after max.iter total iterations, whichever occurs first
 #' @param pre.filter NULL (default), no prefiltering conducted;"opt", optimized number of predictors selected; An integer: min(opt, integer) of predictors selected
- 
 #' @param filter.method NULL (default), no prefiltering; "univariate", univaraite filtering; "glmnet", glmnet filtering
 #' 
 #' @details The function contains two algorithms for filtering high-dimentional multivariate (prognostic/predictive) biomarker candidates via univariate fitering (used p-values of group difference for prognostic case, p-values of interaction term for predictive case); LASSO/Elastic Net method. (Tian L. et al 2012)
 #'
 #' @return \item{var}{a vector of filter results of variable names}
 #' @references Tian L, Alizadeh A, Gentles A, Tibshirani R (2012) A Simple Method for Detecting Interactions between a Treatment and a Large Number of Covariates. J Am Stat Assoc. 2014 Oct; 109(508): 1517-1532.
-#' @export 
-#'
 #' @examples 
-#' \dontrun{
-#' data(Sepsis.train)
-#' 
-#' yvar="survival"
-#' xvars=names(Sepsis.train)[2:12]
-#' trtvar="THERAPY"
-#' trtref="active"
-#' set.seed(123)
-#' 
-#' filter.res <- filter(data=Sepsis.train,
-#' type="b",
-#' yvar=yvar,
-#' xvars=xvars,
-#' trtvar=trtvar,
-#' trtref=trtref,
-#' pre.filter=20,
-#' filter.method="univariate")
-#' 
-#' filter.res
-#' 
-#' set.seed(123)
-#' filter.res <- filter(data=Sepsis.train,
-#' type="b",
-#' yvar=yvar,
-#' xvars=xvars,
-#' trtvar=trtvar,
-#' trtref=trtref,
-#' pre.filter="opt", 
-#' filter.method="glmnet")
-#' 
-#' filter.res
-#' }
-#' 
-#' 
-#' @aliases filter
-#' 
+#' # no run
+#' @export 
 filter <- function(data,type="c",yvar,xvars,censorvar=NULL,trtvar=NULL,trtref=1,n.boot=50,cv.iter=20,pre.filter=length(xvars), 
                 filter.method=NULL){
   if(filter.method == "glmnet"){
@@ -85,7 +36,8 @@ filter <- function(data,type="c",yvar,xvars,censorvar=NULL,trtvar=NULL,trtref=1,
 
 #####################################################################
 #' Flitering using MC glmnet
-#'
+#' @title filter.glmnet
+#' @description Flitering using MC glmnet
 #' @param data input data frame
 #' @param type "c" continuous; "s" survival; "b" binary
 #' @param yvar response variable name
@@ -194,7 +146,8 @@ filter.glmnet <- function(data,type,yvar,xvars,censorvar,trtvar,trtref,n.boot=50
 #####################################################################
 ### 
 #' Univariate Filtering
-#'
+#' @title filter.univariate
+#' @description Univariate Filtering
 #' @param data input data frame
 #' @param type "c" continuous; "s" survival; "b" binary
 #' @param yvar response variable name
@@ -216,7 +169,7 @@ filter.univariate <- function(data,type,yvar,xvars,censorvar,trtvar,trtref=1, pr
           for (i in 1:length(xvars)){
               data.tmp = data.frame(time=data[,yvar], event=data[,censorvar], trt=(data[,trtvar]==trtref)*1, x=data[,xvars[i]])
               res.tmp = try(summary(coxph(Surv(time, event)~trt*x, data=data.tmp))$coefficients["trt:x","Pr(>|z|)"], silent=T)
-              if(class(res.tmp)=="try-error") res.tmp=1
+              if(class(res.tmp)[1]=="try-error") res.tmp=1
               res.all = c(res.all, res.tmp)
           }
       }
@@ -227,7 +180,7 @@ filter.univariate <- function(data,type,yvar,xvars,censorvar,trtvar,trtref=1, pr
           for (i in 1:length(xvars)){
               data.tmp = data.frame(y=data[,yvar], trt=(data[,trtvar]==trtref)*1, x=data[,xvars[i]])
               res.tmp = try(summary(glm(y~trt*x, family=binomial,data=data.tmp))$coefficients["trt:x","Pr(>|z|)"], silent=T)
-              if(class(res.tmp)=="try-error") res.tmp=1
+              if(class(res.tmp)[1]=="try-error") res.tmp=1
               res.all = c(res.all, res.tmp)
           }
       }
@@ -237,7 +190,7 @@ filter.univariate <- function(data,type,yvar,xvars,censorvar,trtvar,trtref=1, pr
           for (i in 1:length(xvars)){
               data.tmp = data.frame(y=data[,yvar], trt=(data[,trtvar]==trtref)*1, x=data[,xvars[i]])
               res.tmp = try(summary(lm(y~trt*x, data=data.tmp))$coefficients["trt:x","Pr(>|t|)"], silent=T)
-              if(class(res.tmp)=="try-error") res.tmp=1
+              if(class(res.tmp)[1]=="try-error") res.tmp=1
               res.all = c(res.all, res.tmp)
           }
       }
@@ -249,7 +202,7 @@ filter.univariate <- function(data,type,yvar,xvars,censorvar,trtvar,trtref=1, pr
           for (i in 1:length(xvars)){
               data.tmp = data.frame(time=data[,yvar], event=data[,censorvar], x=data[,xvars[i]])
               res.tmp = try(summary(coxph(Surv(time, event)~x, data=data.tmp))$coefficients["x","Pr(>|z|)"], silent=T)
-              if(class(res.tmp)=="try-error") res.tmp=1
+              if(class(res.tmp)[1]=="try-error") res.tmp=1
               res.all = c(res.all, res.tmp)
           }
       }
@@ -260,7 +213,7 @@ filter.univariate <- function(data,type,yvar,xvars,censorvar,trtvar,trtref=1, pr
           for (i in 1:length(xvars)){
               data.tmp = data.frame(y=data[,yvar], x=data[,xvars[i]])
               res.tmp = try(summary(glm(y~x, family=binomial,data=data.tmp))$coefficients["x","Pr(>|z|)"], silent=T)
-              if(class(res.tmp)=="try-error") res.tmp=1
+              if(class(res.tmp)[1]=="try-error") res.tmp=1
               res.all = c(res.all, res.tmp)
           }
       }
@@ -270,7 +223,7 @@ filter.univariate <- function(data,type,yvar,xvars,censorvar,trtvar,trtref=1, pr
           for (i in 1:length(xvars)){
               data.tmp = data.frame(y=data[,yvar], x=data[,xvars[i]])
               res.tmp = try(summary(lm(y~x, data=data.tmp))$coefficients["x","Pr(>|t|)"], silent=T)
-              if(class(res.tmp)=="try-error") res.tmp=1
+              if(class(res.tmp)[1]=="try-error") res.tmp=1
               res.all = c(res.all, res.tmp)
           }
       }
@@ -294,7 +247,8 @@ filter.univariate <- function(data,type,yvar,xvars,censorvar,trtvar,trtref=1, pr
 #####################################################################
 ###### rpart filtering 
 #' rpart filtering (only for prognostic case)
-#'
+#' @title filter.unicart
+#' @description rpart filtering 
 #' @param data input data frame
 #' @param type "c" continuous; "s" survival; "b" binary
 #' @param yvar response variable name

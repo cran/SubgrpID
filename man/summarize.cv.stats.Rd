@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{summarize.cv.stats}
 \alias{summarize.cv.stats}
-\title{Calculate summary statistics from raw statistics returned by evaluate.cv.results.}
+\title{summarize.cv.stats}
 \usage{
 summarize.cv.stats(raw.stats, trtvar, type)
 }
@@ -17,5 +17,8 @@ summarize.cv.stats(raw.stats, trtvar, type)
 a list containing p-values, summary statistics and group statistics.
 }
 \description{
+Calculate summary statistics from raw statistics returned by evaluate.cv.results.
+}
+\details{
 Calculate summary statistics from raw statistics returned by evaluate.cv.results.
 }

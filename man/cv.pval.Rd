@@ -2,7 +2,7 @@
 % Please edit documentation in R/cross_validation_functions.R
 \name{cv.pval}
 \alias{cv.pval}
-\title{p-value calculation for each iteration of cross validation.}
+\title{cv.pval}
 \usage{
 cv.pval(yvar, censorvar = NULL, trtvar = NULL, data, type = "s")
 }
@@ -21,5 +21,8 @@ cv.pval(yvar, censorvar = NULL, trtvar = NULL, data, type = "s")
 p-value based on response and prediction vector for each iteration.
 }
 \description{
+p-value calculation for each iteration of cross validation.
+}
+\details{
 p-value calculation for each iteration of cross validation.
 }

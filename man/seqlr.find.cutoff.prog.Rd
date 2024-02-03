@@ -2,10 +2,19 @@
 % Please edit documentation in R/sequential_batting.R
 \name{seqlr.find.cutoff.prog}
 \alias{seqlr.find.cutoff.prog}
-\title{Find cutoff for prognostic case.}
+\title{seqlr.find.cutoff.prog}
 \usage{
-seqlr.find.cutoff.prog(data, yvar, censorvar, xvar, type, class.wt, dir, nsubj,
-  min.sigp.prcnt)
+seqlr.find.cutoff.prog(
+  data,
+  yvar,
+  censorvar,
+  xvar,
+  type,
+  class.wt,
+  dir,
+  nsubj,
+  min.sigp.prcnt
+)
 }
 \arguments{
 \item{data}{input data frame.}
@@ -30,5 +39,8 @@ seqlr.find.cutoff.prog(data, yvar, censorvar, xvar, type, class.wt, dir, nsubj,
 the optimal score (p-value of main effect) for a predictor variable.
 }
 \description{
+Find cutoff for prognostic case.
+}
+\details{
 Find cutoff for prognostic case.
 }

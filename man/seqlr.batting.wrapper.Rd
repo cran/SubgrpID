@@ -2,7 +2,7 @@
 % Please edit documentation in R/sequential_batting.R
 \name{seqlr.batting.wrapper}
 \alias{seqlr.batting.wrapper}
-\title{Wrapper function for seqlr.batting, to be passed to kfold.cv.}
+\title{seqlr.batting.wrapper}
 \usage{
 seqlr.batting.wrapper(data, args)
 }
@@ -15,5 +15,8 @@ seqlr.batting.wrapper(data, args)
 prediction rule returned by seqlr.batting.
 }
 \description{
+Wrapper function for seqlr.batting, to be passed to kfold.cv.
+}
+\details{
 Wrapper function for seqlr.batting, to be passed to kfold.cv.
 }
